@@ -90,7 +90,7 @@ if __name__ == '__main__':
 
     # Construct ANN model
     # Construct feedforward neural network with 1 hidden layer of 7 neuron and max iteration of 2000
-    mlp = MLPClassifier(hidden_layer_sizes=(7), max_iter=2000)
+    mlp = MLPClassifier(hidden_layer_sizes=(7), activation="relu",max_iter=2000)
     mlp.fit(X_train, y_train)
     predictions = mlp.predict(X_test)
 
@@ -98,7 +98,7 @@ if __name__ == '__main__':
     
     fig = plt.figure()
 
-    vis3d(fig, mlp, X_train, y_train, X_test, y_test)
+    #vis3d(fig, mlp, X_train, y_train, X_test, y_test)
 
     # Evaluate performance of ANN model 
     print(confusion_matrix(y_test, predictions))
